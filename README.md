@@ -5,4 +5,4 @@ The script creates four threads and each thread downloads one picture. The pictu
 
 The script takes pictures' urls and names from the file _photo_links_. Before start the download checks the folder ~/Desktop/NASAs/ and only download the pictures left.
 
-It's a massive download, by October 9th there are 13000 pictures. **So click, relax, and get ready to enjoy the views** 
+It's a massive download, by October 9th there are 13000+ pictures. **So click, relax, and get ready to enjoy the views** 
