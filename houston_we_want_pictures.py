@@ -38,7 +38,7 @@ def download(urls, names, destfolder, numthreads=4):
         t.start()
 
     queue.join()
-    
+
 #Download to the same place for everybody, only the pictures left
 directory = path.join(path.expanduser('~/Desktop'),'NASA_Apollo_Project')
 if not path.exists(directory):
@@ -64,7 +64,7 @@ if path.exists(filename):
     urls = [i for j, i in enumerate(urls) if j not in tengui]
 else:
     print 'Need picture links. Go find photo_links on my github  ;) https://github.com/dieguico/Project_Apollo_Archive'
-    
+
 
 #4 parallel downloads should be enough ;)
 download(urls, names, directory, 4) 
