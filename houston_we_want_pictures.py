@@ -75,14 +75,18 @@ if __name__ == "__main__":
             threads=default_threads
     for i in range(2): print ' '        
     print "-----------------------------------------------------------------------"
-    with open('intro','r') as intro:
-        saturn=intro.readlines()
-        for i in range(5): print " "
-        sleep(0.5)
-        for el,row in enumerate(saturn[1:]):
-            print row[:-1]
-            sleep(abs(0.1-0.00025*(el+1)))
-        for i in range(2): print " "
+    try:
+        with open('intro','r') as intro:
+            saturn=intro.readlines()
+            for i in range(5): print " "
+            sleep(0.5)
+            for el,row in enumerate(saturn[1:]):
+                print row[:-1]
+                sleep(abs(0.1-0.00025*(el+1)))
+            for i in range(2): print " "
+    except:
+        print "Is better if you download 'intro' as well ;)"
+        print "-----------------------------------------------------------------------"
 
     if not path.exists(destfolder):
         makedirs(destfolder)
