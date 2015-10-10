@@ -3,7 +3,7 @@ Script written in python 2.7 to download the entire NASA's Project Apollo Archiv
 
 The script creates __number_of_threads__ asynchronous threads and each one downloads one picture. The pictures are stored in __destination_folder__. By default 4 threads are used, and the pictures are stored in the ~/Desktop/NASA_Apollo_Project/ folder, with ~ being expanded by the os module.
 
-The script takes pictures' urls and names from the file __photo_links__. Before initiates the download it checks the destination folder for pictures and only get the remainig.
+The script takes pictures' urls and names from the file __photo_links__. **Before initiates the download it checks the destination folder for pictures and only get the remainig.**
 
 Usage: 
 ```python
