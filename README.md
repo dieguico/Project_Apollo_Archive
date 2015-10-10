@@ -9,5 +9,8 @@ Usage:
 ```python
   python huston_we_want_pictures.py destination_folder number_of_threads
 ```
+Nevertheless, it detects if you only change the number of threads or the destination folder, so it would run with or without any parameter.
+
+![action_shoot](output.gif)
 
 It's a massive download, by October 9th there are 13029 pictures. **So click, relax, and get ready to enjoy the views.** 
