@@ -47,39 +47,21 @@ default_threads=4
 
 if __name__ == "__main__":
     #Download only the pictures left
-    print "-----------------------------------------------------------------------"
-    for i in range(2): print ' '
     if len(argv)==1:
         destfolder=default_directory
         threads=default_threads
-        print "#######################################################################"
-        print "##       Using the default folder: %s"%(default_directory)
-        print "##       Using %d threads."%(default_threads)
-        print "#######################################################################"
     else:
         if path.isdir(argv[1]):
-            print "#######################################################################"
-            print "##       Using the folder: %s"%(arg[1])
             destfolder=argv[1]
         else:
-            print "#######################################################################"
-            print "##       The folder %s do not exists. Using the default folder: %s"%(argv[1],default_directory)
             if argv[1].isdigit and argv[1]!='.' and int(argv[1])<10:
                 threads=int(argv[1])
                 flag=False
-                print "##       Using %d threads."%(threads)
-                print "#######################################################################"
             destfolder=default_directory
         if len(argv)==3 and argv[2].isdigit and int(argv[2])<10:
             threads=int(argv[2])
-            print "##       Using %d threads."%(threads)
-            print "#######################################################################"
         else:
-            print "##       Empty, wrong or huge number of threads. Using just %d."%(default_threads)
-            print "#######################################################################"
             if flag: threads=default_threads
-    for i in range(2): print ' '        
-    print "-----------------------------------------------------------------------"
     try:
         with open('intro','r') as intro:
             saturn=intro.readlines()
@@ -90,8 +72,16 @@ if __name__ == "__main__":
                 sleep(abs(0.015))
             for i in range(2): print " "
     except:
+        for i in range(2): print ' '        
+        print "-----------------------------------------------------------------------"
         print "Is better if you download 'intro' as well ;)"
         print "-----------------------------------------------------------------------"
+    for i in range(2): print " "
+    print "-----------------------------------------------------------------------"
+    print "-    Destination folder: %s"%(destfolder)
+    print "-    Parallel downloads: %s"%(threads)
+    print "-----------------------------------------------------------------------"
+    for i in range(2): print " "
 
     if not path.exists(destfolder):
         makedirs(destfolder)
