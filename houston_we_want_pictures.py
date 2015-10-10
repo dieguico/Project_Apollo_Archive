@@ -46,7 +46,7 @@ default_directory=path.join(path.expanduser('~/Desktop'),'NASA_Apollo_Project')
 default_threads=4
 
 if __name__ == "__main__":
-    #Download to the same place for everybody, only the pictures left
+    #Download only the pictures left
     print "-----------------------------------------------------------------------"
     for i in range(2): print ' '
     if len(argv)==1:
@@ -64,6 +64,11 @@ if __name__ == "__main__":
         else:
             print "#######################################################################"
             print "##       The folder %s do not exists. Using the default folder: %s"%(argv[1],default_directory)
+            if argv[1].isdigit and argv[1]!='.' and int(argv[1])<10:
+                threads=int(argv[1])
+                flag=False
+                print "##       Using %d threads."%(threads)
+                print "#######################################################################"
             destfolder=default_directory
         if len(argv)==3 and argv[2].isdigit and int(argv[2])<10:
             threads=int(argv[2])
@@ -72,17 +77,17 @@ if __name__ == "__main__":
         else:
             print "##       Empty, wrong or huge number of threads. Using just %d."%(default_threads)
             print "#######################################################################"
-            threads=default_threads
+            if flag: threads=default_threads
     for i in range(2): print ' '        
     print "-----------------------------------------------------------------------"
     try:
         with open('intro','r') as intro:
             saturn=intro.readlines()
-            for i in range(5): print " "
+            for i in range(35): print " "
             sleep(0.5)
             for el,row in enumerate(saturn[1:]):
                 print row[:-1]
-                sleep(abs(0.1-0.00025*(el+1)))
+                sleep(abs(0.015))
             for i in range(2): print " "
     except:
         print "Is better if you download 'intro' as well ;)"
@@ -112,4 +117,4 @@ if __name__ == "__main__":
     else:
         print 'Need picture links. Go find photo_links on my github  ;) https://github.com/dieguico/Project_Apollo_Archive'
     
-    download(urls, names, destfolder, 4)
+    download(urls, names, destfolder, threads)
