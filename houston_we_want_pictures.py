@@ -97,6 +97,9 @@ if __name__ == "__main__":
         names=[row['name'] for row in reader]
         op.close()
     
+        print '-      Checking which pictures are not already downloaded.        -'
+        print '-                                                                 -'
+        print '-           It may take some time, or not, who knows.             -'
         tengui=[]
         for el,name in enumerate(names):
             if name in [d.split('/')[-1].split('.')[0] for d in done]:
