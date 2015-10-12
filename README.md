@@ -13,4 +13,4 @@ Nevertheless, it detects if you only change the number of threads or the destina
 
 ![action_shoot](output.gif)
 
-It's a massive download, by October 9th there are 13029 pictures. **So click, relax, and get ready to enjoy the views.** 
+It's a MASSIVE download (57 GB), by October 12th there are 13602 pictures. **So click, relax, and get ready to enjoy the views.** 
