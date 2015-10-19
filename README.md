@@ -7,7 +7,7 @@ The file __photo_links__ contains url and name of the pictures. **Before initiat
 
 Usage: 
 ```python
-  python huston_we_want_pictures.py destination_folder number_of_threads
+  python houston_we_want_pictures.py destination_folder number_of_threads
 ```
 Nevertheless, it detects if you only change the number of threads or the destination folder, so it would run with or without any parameter.
 
